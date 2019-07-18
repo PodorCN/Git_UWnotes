@@ -1,0 +1,25 @@
+\usepackage{listings}
+\usepackage{xcolor,color}
+\usepackage{inconsolata}
+\lstset{numbers=left,
+numberstyle=\tiny,
+keywordstyle=\color{blue!70}, commentstyle=,
+frame=shadowbox,
+rulesepcolor=\color{red!20!green!20!blue!20},
+breaklines=true,
+extendedchars=true
+}
+\definecolor{mycode}{RGB}{138,74,11}
+\definecolor{mybg}{RGB}{237,237,237}
+\author{mzx!}
+\date{\today}
+\newcommand{\ibx}[1]{\framebox[1.1\width]{ #1 }}
+\lstset{language=C++,
+			numbers=left,
+                basicstyle=\inconsolata,
+                keywordstyle=\color{mycode}\inconsolata,
+                stringstyle=\color{red}\inconsolata,
+                commentstyle=\color{green}\inconsolata,
+                morecomment=[l][\color{magenta}]{\#},
+                backgroundcolor=\color{mybg},
+}

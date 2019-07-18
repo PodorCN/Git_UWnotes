@@ -1,0 +1,111 @@
+\documentclass{report}
+\usepackage{xcolor,tikz}
+\title{PMATH 333 Preview Notes}
+\input{cp.tex}
+\input{std.tex}
+\input{defbox.tex}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\chapter{The Real Number System}
+**This Chapter Will Be Skipped Due To The Easiness of The Chapter**
+\chapter{Sequences in R}
+\section{Limits of Sequences}
+\paragraph{Infinite Sequence}is a function whose domain is $N$. For example,\\\ibx{1,$1\over 2$,$1\over 4$... represents the sequence$\{{1\over {2^{n-1}}}\}_{n \in \mathbf N}$}\\\ibx{-1,1,-1,1...represents the sequence $\{{(-1)^n}\}_{n\in \mathbf N}$}\\
+\paragraph{•} It is important not to confuse a \textbf{Sequence} with the \textbf{Set}. For example,\\\ibx{Sequence ${\{x_n\}_{n\in \mathbf N}}$ is 1,2,3,4....}\\\ibx{Set $\{{x_n:n\in \mathbf N\}}$ could be 2,1,3,4...} \\
+\paragraph{•} Also, the \textbf{Sequence} 1,-1,1,-1, is infinite, but the \textbf{Set} $\{{(-1)^n : n\in\mathbf N}
+\}$ has only 2 points.
+
+
+\begin{defbox}
+A sequence of real numbers {$x_n$} is said to \emph{converge} to a real number $a\in \mathbf R$ $\iff$ for every $\varepsilon > 0$,there is an $ N\in \mathbf N$ (which in general depends on $\varepsilon$),such that
+$$ n\ge N \qquad \text{implies} \qquad |x_n-a| < \varepsilon$$
+\end{defbox}
+\paragraph{Interchangeable notation} We shall use the following phrases and notation interchangeably\\
+a)$\{x_n\}$ converges to $a$\\
+b)$x_n$ converges to $a$;\\
+c)$a = \lim_{n\to\infty} x_n$;\\
+d)$x_n\to a$ as $n\to \infty$\\
+e)the \emph{limit}  of {$x_n$} exists and equals a\\ 
+\subsection{Holds for large}
+Let $\mathcal{P}_n$ be a property indexed by $\mathbf{N}$.We shall say that $\mathcal{P}_n$  \emph{Holds for large n} if there is an $N \in \mathbf{N}$ such that $\mathcal{P}_n$ is true for all $n\geq N$. \\
+Hence a loose summary of Definition 2.1 is that $x_n$ converges to $a$ $\iff |x_n - a|$ is small for large $n$
+
+\subsection{At Most One Limit}
+A sequence can have at most one limits
+\paragraph{Proof}Suppose that $\{x_n\}$ converges to both $a$ and $b$. By definition, given $\varepsilon > 0$ there is an integer $N$ such that $n\geq N$ implies $|x_n - a| < {\varepsilon \over 2} $and $|x_n - b| < {\varepsilon \over 2} $. Thus it follows
+$${|a-b|} \leq {|a-x_n| + |x_n-b|}<\varepsilon $$
+Since $|a-b| < \varepsilon$, we conclude that a = b\footnote{By Theorem 1.9}
+
+\subsection{Subsequence}
+\begin{defbox}
+By a \emph{Subsequence} of a sequence $\{x_n\}_{n\in\mathbb N}$, we shall mean a sequence of the form $\{x_nk\}_{k\in \mathbb N}$, where each $n_k\in \mathbb N$ and $n_1<n_2<...$
+\end{defbox}
+\paragraph{•} Thus a subsequence $x_{n1},x_{x2},....$ of $x_1,x_2,...$ is obtained by "deleting" from $x_1,x_2,...$ all $x_n$'s except those such that $n=nk$\\
+\paragraph{•} Subsequence are sometimes used to correct a sequence that behaves badly or to speed up convergence of another that converges slowly.
+
+
+\subsection{Example}
+\begin{enumerate}
+    \item Prove that ${1\over n} \to 0$ as $n\to \infty$
+   \item if $x_n \to 2$, prove that ${(2x_n + 1)\over x_n} \to {5\over 2}$ as $n\to \infty$
+\end{enumerate}
+\paragraph{Proof 1)}
+Let $\varepsilon >$ 0. Use the Archimedean Principle\footnote{Definition An ordered field F has the Archimedean Property if, given any positive x and y in F there is an integer n $>$ 0 so that nx $>$ y.} to choose $N\in \mathbf{N}$ such that $N > {1\over \varepsilon}$. By taking the reciprocal of this inequality. We see that $n \geq N$ implies ${1\over n}\leq{1\over N}<\varepsilon$. \\
+\underline{Since $1\over n$ are all positive, it follows that $|{{1\over n} < \varepsilon}|$ for all $n\geq N$}
+\paragraph{Proof 2)}
+Let $\varepsilon > 0$ \\Since $x_n \to 2$, apply Definition 2.1 to this $\varepsilon > 0$ to choose $N_1 \in \mathbf{N}$ such that $n\geq N_1$ implies $|x_n - 2|<\varepsilon$\\Next, apply Definition 2.1 with $\varepsilon = 1$ to choose $N_2$ such that $n\geq N_2$ implies $|x_n - 2| < 1$\\
+By Fundamental Theorem of Absolute Values,we have $n\geq N_2$ implies $x_n >1$\\
+Set $N = \max\{N_1,N-2\}$ and suppose that $n\geq N$. \\
+Since $n\geq N_1$, we have $|2-x_n| = |x_n-2| < \varepsilon$\\
+Since $n\geq N_2$, we have $0<{1\over (2x_n)}< {1\over 2} < 1$ It follows that
+$$|{{{2x_n+1}\over{x_n}} - {5\over 2}}| = {{|2-x_n|}\over {2x_n}} <{{\varepsilon}\over {2x_n}} <\varepsilon$$
+for all $x\geq N$
+
+\subsection{Example}
+\begin{enumerate}
+    \item Prove the the sequnece $\{(-1)^n\}_{n\in \mathbb{N}}$ has no limits
+  
+\end{enumerate}
+\paragraph{Proof}
+Suppose that $(-1)^n \to a$ as $n\to \infty$ for some $a\in R$. Given $\varepsilon = 1$, there i s an $N\in \mathbb N$ such that $n \geq N$ implies $|(-1)^n -a| <\varepsilon$\\
+For $n$ odd, this implies \ibx{$|1+a| = |-1-a| < 1$}\\
+For $n$ even, this implies \ibx{$|1-a| < 1$}\\
+$$ 2 = |1+1|\leq{|1-a|+|1+a|}<1 + 1= 2$$
+that is, 2$<$ 2, a contradiction\footnote{Triangle Inequality}
+\subsection{}
+
+
+
+
+
+
+\chapter{Proof Technique}
+\section{Limits}
+\subsection{Limits Not Exist}
+\begin{enumerate}
+    \item Prove the the sequnece $\{(-1)^n\}_{n\in \mathbb{N}}$ has no limits
+  
+\end{enumerate}
+\paragraph{Proof}
+Suppose that $(-1)^n \to a$ as $n\to \infty$ for some $a\in R$. Given $\varepsilon = 1$, there i s an $N\in \mathbb N$ such that $n \geq N$ implies $|(-1)^n -a| <\varepsilon$\\
+For $n$ odd, this implies \ibx{$|1+a| = |-1-a| < 1$}\\
+For $n$ even, this implies \ibx{$|1-a| < 1$}\\
+$$ 2 = |1+1|\leq{|1-a|+|1+a|}<1 + 1= 2$$
+that is, 2$< $2, a contradiction\footnote{Triangle Inequality}
+
+\part{newpart}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,523); %set diagram left start at 0, and has height of 523
+\node[
+
+
+
+
+\end{tikzpicture}
+\end{document}

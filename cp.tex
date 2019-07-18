@@ -1,0 +1,31 @@
+\usepackage{listings}
+\usepackage{xcolor,color}
+\usepackage{courier}
+\usepackage{inconsolata}
+%\renewcommand*\familydefault{\ttdefault}
+\lstset{numbers=left,
+numberstyle=\tiny,
+keywordstyle=\color{blue!70}, commentstyle=,
+frame=shadowbox,
+rulesepcolor=\color{red!20!green!20!blue!20},
+breaklines=true,
+extendedchars=true
+}
+
+
+\definecolor{mykeycode}{RGB}{138,74,11}
+\definecolor{mybg}{RGB}{64,64,64}
+\definecolor{mycm}{RGB}{170,215,208}
+\definecolor{mycode}{RGB}{219,219,219}
+
+
+\lstset{language=C++,
+numbers=left,
+                basicstyle=\color{mycode}\ttfamily,
+                keywordstyle=\color{mykeycode}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{mycm}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#},
+                backgroundcolor=\color{mybg}, 
+                morekeywords={*,string.cin}
+}

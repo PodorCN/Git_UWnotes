@@ -1,0 +1,18 @@
+\documentclass{article}
+\input{myst.tex}
+\begin{lstlisting}[language={c++}]
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main(int argc,char *argv[]) {
+    string word;
+    while(cin>>word){
+        if(word != argv[1]){
+            cout<<word<<endl;
+        }
+    }
+}
+\end{lstlisting}
+\end{document}

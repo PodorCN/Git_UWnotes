@@ -1,0 +1,18 @@
+\PassOptionsToPackage{svgnames}{xcolor}
+\usepackage{tcolorbox}
+\usepackage{lipsum,xcolor,color}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings,shadows}
+
+\definecolor{title_color}{HTML}{ea7dc7}
+\definecolor{back_color}{HTML}{f7e8e8}
+
+\newcounter{defboxctr}
+\newenvironment{defbox}{%
+\refstepcounter{defboxctr}% increment the environment's counter
+    \tcolorbox[beamer,%
+    noparskip,breakable,
+    colback=back_color,colframe=title_color,%
+    title={Definition \thedefboxctr}]}%
+    {\endtcolorbox}
+    \numberwithin{defboxctr}{section}
