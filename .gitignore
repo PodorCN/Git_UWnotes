@@ -1,0 +1,8 @@
+*.tex
+*.dvi
+*.toc
+*.aux
+*.gz
+*.log
+*.out
+*.png
